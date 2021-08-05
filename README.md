@@ -1,6 +1,6 @@
 # data_plus
 
-This is an anonymized version of my summer 2021 Data+ project, Mapping Trajectories of Doctoral Students. Since the data is sensitive survey information, I have created an de-identified version, where programs have been replaced with the names of Pokemon.
+This repo contains all files from an anonymized version of my summer 2021 Data+ project, Mapping Trajectories of Doctoral Students. Since the data is sensitive survey information, I have created an de-identified version, where programs have been replaced with the names of Pokemon.
 
 Functionality-wise, all features remain the same; the changes from the original project are entirely cosmetic.
 
