@@ -6,8 +6,8 @@ Functionality-wise, all features remain the same; the changes from the original 
 
 The project consists of a live Shiny App and a pair of files which use RMarkdown to automatically generate reports.
 
-Check out the app here:
+Check out the app here: https://evandragich.shinyapps.io/data_plus_project/
 
-And browse one of the reports located in output/reports
+And browse one of the reports located in output/reports.
 
 Thanks so much for checking out my repo, and feel free to contact me at evandragich@gmail.com with any questions!
