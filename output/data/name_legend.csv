@@ -4,7 +4,7 @@ wave,wave,corresponds to year of redcap,Data Identification,Exit Survey,FALSE,FA
 Capture Date,capture_date,Date,Basic,Exit Survey,FALSE,FALSE,NA,NA
 record_id,record_id,Student,Basic,Exit Survey,FALSE,FALSE,NA,NA
 acad_year.x,acad_year,Academic year,Basic,Exit Survey,FALSE,FALSE,NA,NA
-I.     DEGREE PROGRAM & COMPLETI,program,Degree program,Basic,Exit Survey,FALSE,FALSE,NA,NA
+I.     DEGREE PROGRAM & COMPLETI,pokemon,Pokemon,Basic,Exit Survey,FALSE,FALSE,NA,NA
 "Program subfield: ifapplicable,",subfield,Program subfield,Basic,Exit Survey,FALSE,FALSE,NA,NA
 When did you first enroll as a P,enroll_sem,When did you first enroll as a Ph.D. student at Duke?,Basic,Exit Survey,FALSE,FALSE,NA,NA
 When did you first enroll a_0001,enroll_year,When did you first enroll as a Ph.D. student at Duke?,Basic,Exit Survey,FALSE,FALSE,NA,NA
@@ -194,7 +194,7 @@ redcap_survey_identifier,di_redcap_survey_identifier,Survey Identifier,Data Iden
 datediff,di_datediff,Time between graduations and when survey was taken,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
 acad_plan,b_acad_plan,Academic Plan,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
 dipl_descr,b_dipl_descr,Diploma Description,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
-generation,b_generation,Generation,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+academic_division,b_generation,Generation,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
 graduation_program,b_graduation_program,Graduation Program,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
 degree,b_degree,Degree,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
 graduation_term,b_graduation_term,Graduation Term,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA

@@ -56,7 +56,7 @@ name_legend <- read_csv('output/data/name_legend.csv')
 
 # Coerce program and grad term columns to be easily binned; these don't need specified factors though. Levels will get constantly overwritten
 # in app.R, each time the user chooses a new sort mode.
-master_df$program <- as.factor(master_df$program)
+master_df$pokemon <- as.factor(master_df$pokemon)
 master_df$b_grad_term <- as.factor(master_df$b_grad_term)
 
 # Create module vectors ----
@@ -94,25 +94,25 @@ ao_modules <- c("Career and Professional Development" = "ca_",
 
 
 # Making a "key" of program->school 
-trinity_programs <- c("Pidgey","Sentret","Zigzagoon","Rattata","Linoone","Starly","Bidoof","Spearow","Hoothoot", "Jigglypuff", "Ambipom","Meowth","Taillow","Farfetch'd","Doduo","Swellow","Buneary","Glameow","Lickitung","Chansey","Happiny","Slakoth")
-medicine_programs <- c("Totodile","Croconaw","Feraligatr","Chinchou","Lanturn","Marill","Azumarill","Politoed","Wooper","Quagsire","Slowking")
-fuqua_programs <- c("Drapion")
-pratt_programs <- c("Blitzle","Zebstrika","Emolga","Tynamo")
-nicholas_programs <- c("Treecko","Bellossom","Grovyle","Turtwig","Sceptile")
-sanford_programs <- c("Lucario")
-nursing_programs <- c("Gallade")
+normal_programs <- c("Pidgey","Sentret","Zigzagoon","Rattata","Linoone","Starly","Bidoof","Spearow","Hoothoot", "Jigglypuff", "Ambipom","Meowth","Taillow","Farfetch'd","Doduo","Swellow","Buneary","Glameow","Lickitung","Chansey","Happiny","Slakoth")
+water_programs <- c("Totodile","Croconaw","Feraligatr","Chinchou","Lanturn","Marill","Azumarill","Politoed","Wooper","Quagsire","Slowking")
+poison_programs <- c("Drapion")
+electric_programs <- c("Blitzle","Zebstrika","Emolga","Tynamo")
+grass_programs <- c("Treecko","Bellossom","Grovyle","Turtwig","Sceptile")
+fighting_programs <- c("Lucario")
+psychic_programs <- c("Gallade")
 
 # Creating a new "school" column whose values are mapped from the above program->school key
 master_df <- master_df %>% 
   mutate(., type = case_when(
-    program %in% trinity_programs ~ "Normal",
-    program %in% medicine_programs ~ "Water",
-    program %in% fuqua_programs ~ "Poison", 
-    program %in% pratt_programs ~ "Electric",
-    program %in% nicholas_programs ~ "Grass",
-    program %in% sanford_programs ~ "Fighting",
-    program %in% nursing_programs ~ "Psychic"))%>% 
-  relocate(`type`, .after = `program`)
+    pokemon %in% normal_programs ~ "Normal",
+    pokemon %in% water_programs ~ "Water",
+    pokemon %in% poison_programs ~ "Poison", 
+    pokemon %in% electric_programs ~ "Electric",
+    pokemon %in% grass_programs ~ "Grass",
+    pokemon %in% fighting_programs ~ "Fighting",
+    pokemon %in% psychic_programs ~ "Psychic"))%>% 
+  relocate(`type`, .after = `pokemon`)
 
 # Making a key of grad term -> grad term bins                
 spr_12_to_sum_2_15 <- c("2012 Fall Term","2012 Spring Term","2012 Summer Term 2","2013 Fall Term","2013 Spring Term",
@@ -623,7 +623,8 @@ ui <- dashboardPage(
                                        fluidRow(
                                          column(width = 2,
                                                 box(title = "Link to user guide:", width = NULL,
-                                                    uiOutput("guidelink")
+                                                    #uiOutput("guidelink")
+                                                    textOutput("text")
                                                     )
                                            
                                          )
@@ -676,11 +677,11 @@ server <- function(input, output, session) {
                           choices=q_choices)
     }) 
   
-  # Update "select one program" option for plot 1 based on answer to division1/school1
+  # Update "select one pokemon" option for plot 1 based on answer to division1/school1
   observe({
     
     choices_df <- master_df %>%
-      select(program, type, b_generation) %>%
+      select(pokemon, type, b_generation) %>%
       distinct(.)
     
     if (!("All Types" %in% input$type1)) {
@@ -692,7 +693,7 @@ server <- function(input, output, session) {
         filter(b_generation %in% input$generation1)
     }
       
-    p_choices <- choices_df$program %>%
+    p_choices <- choices_df$pokemon %>%
       droplevels() %>%
       levels()
     
@@ -721,7 +722,7 @@ server <- function(input, output, session) {
   observe({
     
     choices_df <- master_df %>%
-      select(program, type, b_generation) %>%
+      select(pokemon, type, b_generation) %>%
       distinct(.)
     
     if (!("All Types" %in% input$type2)) {
@@ -733,7 +734,7 @@ server <- function(input, output, session) {
         filter(b_generation %in% input$generation2)
     }
     
-    p_choices <- choices_df$program %>%
+    p_choices <- choices_df$pokemon %>%
       droplevels() %>%
       levels()
     
@@ -833,7 +834,7 @@ server <- function(input, output, session) {
       .[.$wave == "0",] %>%
       `if`(!("All Types" %in% input$type1), .[.$type %in% input$type1,], .) %>%
       `if`(!("ALL" %in% input$generation1), .[.$b_generation %in% input$generation1,], .) %>%
-      `if`(input$one1 == "On", .[.$program == input$pokemon1,], .) %>%
+      `if`(input$one1 == "On", .[.$pokemon == input$pokemon1,], .) %>%
       # Special case when facetting by gender and/or age and/or racial group--remove NA for these demographics by default, 
       # as there are many (and that 3rd panel on the facetted graph output becomes really gross...)
       `if`("gender" %in% input$facet1, .[!(is.na(.$dem_gender)),], .) %>% 
@@ -846,28 +847,28 @@ server <- function(input, output, session) {
   sorted_df1 <- reactive(
     filtered_df1() %>%
       # Intermediate filter step to remove bins with <5 people
-      select(program, !!tempcol1(), !!var_A_1(), !!var_B_1()) %>%
-      group_by(program, !!var_A_1(), !!var_B_1()) %>%
+      select(pokemon, !!tempcol1(), !!var_A_1(), !!var_B_1()) %>%
+      group_by(pokemon, !!var_A_1(), !!var_B_1()) %>%
       mutate(sorter = mean_func(as.numeric(!!tempcol1()))) %>%
       ungroup(.) %>%
-      group_by(program, !!var_A_1(), !!var_B_1()) %>%
+      group_by(pokemon, !!var_A_1(), !!var_B_1()) %>%
       filter(., n() >=5) %>%
       ungroup(.) %>%
       # Now that we've done that, go back to the broader df to finalize the data for plotting
-      group_by(program, !!var_A_1(), !!var_B_1(), sorter, !!tempcol1()) %>%
+      group_by(pokemon, !!var_A_1(), !!var_B_1(), sorter, !!tempcol1()) %>%
       summarise(n=n()) %>%
       ungroup(., sorter) %>%
       mutate(perc = round(((n / sum(n))*100), digits=0)) %>%
       mutate(perclabel = paste0(perc, "%")) %>%
       mutate(total = sum(n)) %>%
-      mutate(total = paste(program, "\n n =", total, sep = " ")) %>%
+      mutate(total = paste(pokemon, "\n n =", total, sep = " ")) %>%
       mutate(total = as.factor(total)) %>%
       ungroup(.) %>%
       `if`((input$sort1 == "Descending Mean Ratings"), 
            mutate(., total = fct_reorder(total, sorter, mean)), .) %>%
       `if`((input$sort1 == "Descending Size"), 
            mutate(., total = fct_reorder(total, n, sum, .desc = TRUE)), .) %>%
-      group_by(program, !!var_A_1(), !!var_B_1())
+      group_by(pokemon, !!var_A_1(), !!var_B_1())
   )
   
   # Reassign the "grouped" version of the dataframe for first plot based on updated user inputs to sort selection
@@ -885,7 +886,7 @@ server <- function(input, output, session) {
       mutate(perclabel = paste0(perc, "%")) %>%
       mutate(total = sum(n)) %>%
       mutate(total = paste("n =", total, sep = " ")) %>%
-      mutate(dum = "All selected programs")
+      mutate(dum = "All selected pokemons")
   )
   
   # Reassign labeling variable based on user input
@@ -1092,7 +1093,7 @@ server <- function(input, output, session) {
         .[.$wave == 0,] %>%
         `if`(!("All Types" %in% input$type2), .[.$type %in% input$type2,], .) %>%
         `if`(!("ALL" %in% input$generation2), .[.$b_generation %in% input$generation2,], .) %>%
-        `if`(input$one2 == "On", .[.$program == input$pokemon2,], .) %>%
+        `if`(input$one2 == "On", .[.$pokemon == input$pokemon2,], .) %>%
         # Special case when facetting by gender and/or age and/or racial group--remove NA for these demographics by default, 
         # as there are many (and that 3rd panel on the facetted graph output becomes really gross...)
         `if`("gender" %in% input$facet2, .[!(is.na(.$dem_gender)),], .) %>%
@@ -1106,28 +1107,28 @@ server <- function(input, output, session) {
     sorted_df2 <- reactive(
       filtered_df2() %>%
         # Intermediate filter step to remove bins with <5 people
-        select(program, !!tempcol2(), !!var_A_2(), !!var_B_2()) %>%
-        group_by(program, !!var_A_2(), !!var_B_2()) %>%
+        select(pokemon, !!tempcol2(), !!var_A_2(), !!var_B_2()) %>%
+        group_by(pokemon, !!var_A_2(), !!var_B_2()) %>%
         mutate(sorter = mean_func(as.numeric(!!tempcol2()))) %>%
         ungroup(.) %>%
-        group_by(program, !!var_A_2(), !!var_B_2()) %>%
+        group_by(pokemon, !!var_A_2(), !!var_B_2()) %>%
         filter(., n() >=5) %>%
         ungroup(.) %>%
-        group_by(program, !!var_A_2(), !!var_B_2(), sorter, !!tempcol2()) %>%
+        group_by(pokemon, !!var_A_2(), !!var_B_2(), sorter, !!tempcol2()) %>%
         summarise(n=n()) %>%
         ungroup(., sorter) %>%
         # sorter = mean(as.numeric(a_interact_yn))) %>%
         mutate(perc = round(((n / sum(n))*100), digits=0)) %>%
         mutate(perclabel = paste0(perc, "%")) %>%
         mutate(total = sum(n)) %>%
-        mutate(total = paste(program, "\n n =", total, sep = " ")) %>%
+        mutate(total = paste(pokemon, "\n n =", total, sep = " ")) %>%
         mutate(total = as.factor(total)) %>%
         ungroup(.) %>%
         `if`((input$sort2 == "Descending Mean Ratings"), 
              mutate(., total = fct_reorder(total, sorter, mean)), .) %>%
         `if`((input$sort2 == "Descending Size"), 
             mutate(., total = fct_reorder(total, n, sum, .desc = TRUE)), .) %>%
-        group_by(program, !!var_A_2(), !!var_B_2())
+        group_by(pokemon, !!var_A_2(), !!var_B_2())
         
     )
     
@@ -1155,7 +1156,7 @@ server <- function(input, output, session) {
         mutate(perclabel = paste0(perc, "%")) %>%
         mutate(total = sum(n)) %>%
         mutate(total = paste("n =", total, sep = " ")) %>%
-        mutate(dum = "All selected programs")
+        mutate(dum = "All selected pokemons")
     )
     
     # Reassign second plots based on all previous updated user inputs
@@ -1263,11 +1264,13 @@ server <- function(input, output, session) {
       }
     )
   
-  ### REACTABLE ----
-  url <- a("User Guide", href="https://docs.google.com/document/d/e/2PACX-1vQO8a8tjOpROVnzCRO0CF9KccRBlFX2DGwrDbU_CnZirh9HMzkKzO9YOPqfW8bwEOy87IkdOIVyKHwa/pub")
-  output$guidelink <- renderUI({
-    tagList(url)
-  })
+  # ### REACTABLE ----
+  # url <- a("User Guide", href="this is where the link would go once i anonymize the user guide")
+  # output$guidelink <- renderUI({
+  #   tagList(url)
+  # })
+    
+    output$text <- renderText({ "User Guide TBA (To be anonymized!)"})
       
   output$table <-
     renderReactable(key)
