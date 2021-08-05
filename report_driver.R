@@ -17,11 +17,12 @@ str_wrap_factor <- function(x, ...) {
 
 # Import Data (this csv is created in regression_exploration)
 happy_df_numeric <- read_csv('output/data/summarised_happy_questions_numeric.csv') %>%
-  mutate(program = factor(program))
+  mutate(pokemon = factor(program), .after = program) %>%
+  mutate(program = NULL)
 
 # Grab list of all programs; this will be used to map() over at very bottom (and auto-generate a report for each program!)
 allprograms <- happy_df_numeric %>%
-  select(program) %>%
+  select(pokemon) %>%
   distinct() %>%
   pull() %>%
   as.character()
@@ -70,7 +71,7 @@ names(myquestionslongform) <- myquestions
 # Create new "global" df to be used in all summary statistics in reports
 summary_df <- master_df %>%
   filter(wave == 0) %>%
-  select(program, b_grad_term_binned, b_age_at_enroll_binned, dem_gender, dem_racial_group_cleaned, dem_citizen_cleaned) %>%
+  select(pokemon, b_grad_term_binned, b_age_at_enroll_binned, dem_gender, dem_racial_group_cleaned, dem_citizen_cleaned) %>%
   mutate(across(c(2:4), ~ factor(.x))) %>%
   mutate(dem_racial_group_cleaned = factor(dem_racial_group_cleaned, levels = c("2+ groups",
                                                                                 "African-American/African-Caribbean/Black",
@@ -93,15 +94,14 @@ summary_df <- master_df %>%
 # Render_report function ----
 
 # Function that takes in a program name and generates a report for it
-invisible(map(allprograms, function(myprogram) { 
+invisible(map(allprograms, function(mypokemon) { 
   
   # Generate filename for reports
-  myfilename <- paste0("output/reports/",to_snake_case(myprogram),"_summary_boxplots",".pdf")
+  myfilename <- paste0("output/reports/",to_snake_case(mypokemon),"_summary_boxplots",".pdf")
   
   # Determine program's generation and store this as mygeneration
   mygeneration <- master_df %>%
-    #.[.$wave == "0",] %>%
-    .[.$program == myprogram,] %>%
+    .[.$pokemon == mypokemon,] %>%
     select(b_generation) %>%
     distinct() %>%
     pull()
@@ -109,14 +109,14 @@ invisible(map(allprograms, function(myprogram) {
   # This hard-coding step is needed because of two programs, for whom graduates indicated 2 different Divisions (II & III;  III & IV respectively.)
   # Oh, the skill of survey respondents! *chef's kiss*
   # We want the latter of each, respectively, here:
-  if (myprogram == "Slakoth") { mydivision = "Generation III" }
-  if (myprogram == "Turtwig") { mydivision = "Generation IV" }
+  if (mypokemon == "Slakoth") { mygeneration = "Generation III" }
+  if (mypokemon == "Turtwig") { mygeneration = "Generation IV" }
   
   #Determine vector of programs to compare to (including this program itself); these will be the ones represented in the boxplots in the report
   comparison_group <- master_df %>%
-    select(b_generation, program) %>%
+    select(b_generation, pokemon) %>%
     filter(b_generation == mygeneration) %>%
-    select(program) %>%
+    select(pokemon) %>%
     distinct() %>%
     droplevels() %>%
     pull() %>%
@@ -125,13 +125,13 @@ invisible(map(allprograms, function(myprogram) {
   
   # Create mini version of happy_df_numeric to use inside report.Rmd, with full-name questions.
   mydata <- happy_df_numeric %>%
-    filter(program %in% comparison_group) %>% # <- grab just the relevant programs
-    select(program, all_of(myquestions)) %>% # <- grab just the program column and each of the question columns named above
-    pivot_longer(!program, names_to = "question", values_to = "score") %>%  # <- pivot this longer to be plotted easier
+    filter(pokemon %in% comparison_group) %>% # <- grab just the relevant programs
+    select(pokemon, all_of(myquestions)) %>% # <- grab just the program column and each of the question columns named above
+    pivot_longer(!pokemon, names_to = "question", values_to = "score") %>%  # <- pivot this longer to be plotted easier
     mutate(question = recode(question, !!!myquestionslongform)) %>% # <- "index match" the short questions into their long form
     mutate(highlight = case_when(
-      program == myprogram ~ TRUE,
-      !is.na(program) ~ FALSE
+      pokemon == mypokemon ~ TRUE,
+      !is.na(pokemon) ~ FALSE
     )) %>% # <- create new column that will be mapped to alpha to on the plot (ie shade in the specific program's plots)
     group_by(question) %>%
     mutate(z_score = scale(score)) %>% # <- calculate z score, to order plots (ie. along a particular program's z score)
@@ -161,7 +161,7 @@ invisible(map(allprograms, function(myprogram) {
   
   # Filter out for just one program's data
   mysummary_df <- summary_df %>%
-    filter(program == myprogram) %>% 
+    filter(pokemon == mypokemon) %>% 
     mutate(across(c(2:6), ~ droplevels(.x))) # <-  Drop unused levels of summary_df so they won't appear as 0s in table
 
   
@@ -170,7 +170,7 @@ invisible(map(allprograms, function(myprogram) {
   # Execute the report for this particular program!
   rmarkdown::render(input = "report.Rmd", 
                     params = list(
-                      program = myprogram
+                      pokemon = mypokemon
                       ),
                     output_format = "pdf_document",
                     output_file = myfilename

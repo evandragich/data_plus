@@ -1,13 +1,13 @@
 ---
 title: "Duke Graduate Education Report"
-subtitle: "`r myprogram`"
+subtitle: "`r mypokemon`"
 author: "Evan Dragich & Katie Tan"
 date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
 output:
   pdf_document:
     extra_dependencies: ["float"]
 params:
-  program: ""
+  pokemon: ""
 header-includes:
     - \usepackage{booktabs}
 ---
@@ -25,7 +25,7 @@ theme_set(theme_minimal())
 ```
 
 # Overview
-This report contains two pages of content, following this title page. The first displays demographic data collected from *Exit Survey for PhD Completers*, a standardized questionnaire administered to graduating doctoral students at many American Association of Universities (AAU) institutions. The responses displayed in this report were collected from students graduating from the **`r myprogram`** department between the Spring 2012 and Fall 2020 semesters. For more details on the survey's content, distribution, and response rate, please reach out to the Assistant Dean of Evaluation and Assessment in TGS, Dr. Firstname Lastname.
+This report contains two pages of content, following this title page. The first displays demographic data collected from *Exit Survey for PhD Completers*, a standardized questionnaire administered to graduating doctoral students at many American Association of Universities (AAU) institutions. The responses displayed in this report were collected from students graduating from the **`r mypokemon`** department between the Spring 2012 and Fall 2020 semesters. For more details on the survey's content, distribution, and response rate, please reach out to the Assistant Dean of Evaluation and Assessment in TGS, Dr. Firstname Lastname.
 
 The third page displays a series of horizontal boxplots:
 
@@ -42,7 +42,7 @@ The third page displays a series of horizontal boxplots:
 
 Given the broad scope of this survey, and thus the variety of question formats, some qualitative responses were converted to numbers for this display. For example, *How many on campus presentations given?* was not converted, as responses were already numeric. However, in the case of *Overall Quality*, the question was originally framed Likert-style: respondents indicated one of the following: *Poor*, *Fair*, *Good*, *Very Good*, and *Excellent*; these scores were translated into numeric values from 1-5, respectively.
 
-As a result, the numbers on the bottom axis are not as meaningful. For example, a score of "4" may be on the low end for one question, but higher for another. The key takeaways from this display are the **colors** of **`r mygeneration`'s** responses, as these ratings take into account those of all **`r mygeneration`** programs.
+As a result, the numbers on the bottom axis are not as meaningful. For example, a score of "4" may be on the low end for one question, but higher for another. The key takeaways from this display are the **colors** of **`r mypokemon`'s** responses, as these ratings take into account those of all **`r mygeneration`** programs.
 \clearpage
 
 ```{r create summary stats table}
@@ -63,7 +63,7 @@ my.render.cat <- function(x) {
         sprintf("%d (%.0f %%)", FREQ, PCT))))
 }
 ```
-# Summary Statistics for `r myprogram`
+# Summary Statistics for `r mypokemon`
 ``` {r print summary stats table}
 table1(strata, 
        labels,
@@ -83,12 +83,12 @@ g <- ggplot(mydata, aes(x = str_wrap_factor(question, width = 58), y = score)) +
                        guide = "none") +
   scale_fill_manual(breaks = c("Below Average", "Near Average", "Above Average"),
                     values = c("tomato3", "blue", "green", "black"),
-                    name = str_wrap(paste0(myprogram, "'s Relative Rating"), width = 30),
+                    name = str_wrap(paste0(mypokemon, "'s Relative Rating"), width = 30),
                     guide = guide_legend(nrow = 3, reverse = TRUE)) +
   coord_flip() +
   theme(legend.position = "bottom")
 ```
-# Summary of `r myprogram`
+# Summary of `r mypokemon`
 ## Relative to other `r mygeneration` programs
 ### Each dot represents one `r mygeneration` program mean.
 ``` {r print g, fig.width = 8, fig.height = 9.5, fig.align = "center"}
