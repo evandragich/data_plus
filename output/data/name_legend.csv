@@ -1,0 +1,401 @@
+old_name,new_name,longer_name,module,data_source,display_streamlined,happy_question,question_type,dashboard_comments
+id,id,"ID (not usable, just function of creating long df)",Data Identification,Exit Survey,FALSE,FALSE,NA,NA
+wave,wave,corresponds to year of redcap,Data Identification,Exit Survey,FALSE,FALSE,NA,NA
+Capture Date,capture_date,Date,Basic,Exit Survey,FALSE,FALSE,NA,NA
+record_id,record_id,Student,Basic,Exit Survey,FALSE,FALSE,NA,NA
+acad_year.x,acad_year,Academic year,Basic,Exit Survey,FALSE,FALSE,NA,NA
+I.     DEGREE PROGRAM & COMPLETI,program,Degree program,Basic,Exit Survey,FALSE,FALSE,NA,NA
+"Program subfield: ifapplicable,",subfield,Program subfield,Basic,Exit Survey,FALSE,FALSE,NA,NA
+When did you first enroll as a P,enroll_sem,When did you first enroll as a Ph.D. student at Duke?,Basic,Exit Survey,FALSE,FALSE,NA,NA
+When did you first enroll a_0001,enroll_year,When did you first enroll as a Ph.D. student at Duke?,Basic,Exit Survey,FALSE,FALSE,NA,NA
+When will your Ph.D. degree be c,grad_month,When will your Ph.D. degree be conferred?,Basic,Exit Survey,FALSE,FALSE,NA,NA
+When will your Ph.D. degree_0001,grad_year,When will your Ph.D. degree be conferred?,Basic,Exit Survey,FALSE,FALSE,NA,NA
+II. SELECTION& ADMISSIONDid,a_interact_yn,"Did you interact with faculty or current graduate students before applying to, admission to, or enrollment in, your doctoral program?",Selection & Admission,Exit Survey,TRUE,TRUE,yes_no,NA
+newly_created,a_interact_t,"Prior to application, admission, or enrollment, did you communicate via email?",Selection & Admission,Exit Survey,FALSE,TRUE,yes_no,"Show NA: some programs don't add to 100%--could be a rounding issue because ""numbers"" was fine"
+How helpful were these interacti,a_interact_h,How helpful were these interactions?,Selection & Admission,Exit Survey,FALSE,TRUE,likert_3,NA
+Statistical information about Du,a_info,"Statistical information about Duke Ph.D. admissions & enrollment, completion rates, time to degree, and placement are posted on the Graduate School website. Were you aware of these data?",Selection & Admission,Exit Survey,TRUE,TRUE,yes_no,NA
+Did these data affect your decis,a_info_yn,Did these data affect your decision to apply?,Selection & Admission,Exit Survey,TRUE,TRUE,yes_no,NA
+III. DEPARTMENTAL ORIENTATION &,do_attend,"When you first enrolled as a doctoral student, did your department or program provide an Orientation to explain the process of completing your doctoral degree?",Departmental Orientation & Communication,Exit Survey,TRUE,TRUE,split_scale_4,scale or likert?
+How effective was this orientati,do_effective,How effective was this orientation in helping you to understand the process of completing your doctoral degree?,Departmental Orientation & Communication,Exit Survey,FALSE,TRUE,likert_5,Light blue onward is cut off
+Did your department or program p,do_expect,Did your department or program provide you with a written set of expectations about academic requirements and expected progress?,Departmental Orientation & Communication,Exit Survey,TRUE,TRUE,yes_no,NA
+Other than course gradesand res,do_assess,"Other than course grades and results of written or oral examinations, did your department or program provide a formal assessment of your academic progress at least annually?",Departmental Orientation & Communication,Exit Survey,TRUE,TRUE,yes_no,NA
+IV. GENERAL SUPPORTPlease ra,gs_fin,Financial support,General Support,Exit Survey,TRUE,TRUE,likert_5,NA
+IV. GENERAL SUPPORTPlea_0001,gs_it,Information technology (IT) resources,General Support,Exit Survey,FALSE,TRUE,likert_5,NA
+IV. GENERAL SUPPORTPlea_0002,gs_ws,"Your personal work space [e.g., desk or office]",General Support,Exit Survey,FALSE,TRUE,likert_5,NA
+IV. GENERAL SUPPORTPlea_0003,gs_lib,Library and electronic research resources,General Support,Exit Survey,FALSE,TRUE,likert_5,NA
+IV. GENERAL SUPPORTPlea_0004,gs_lab,"Laboratory, clinical, studio or other physical facilities",General Support,Exit Survey,FALSE,TRUE,likert_5,NA
+V. TRAINING PROGRAM & PROGRAMQ,pq_facintel,Faculty Intellect,Training Program & Program Quality,Exit Survey,FALSE,TRUE,likert_5,NA
+V. TRAINING PROGRAM & PROG_0001,pq_recdev,Program's ability to keep pace with field's recent developments,Training Program & Program Quality,Exit Survey,TRUE,TRUE,likert_5,NA
+V. TRAINING PROGRAM & PROG_0002,pq_curric,Curriculum,Training Program & Program Quality,Exit Survey,FALSE,TRUE,likert_5,NA
+V. TRAINING PROGRAM & PROG_0003,pq_teach,Faculty teaching,Training Program & Program Quality,Exit Survey,TRUE,TRUE,likert_5,NA
+V. TRAINING PROGRAM & PROG_0004,pq_methods,Research Methods,Training Program & Program Quality,Exit Survey,TRUE,TRUE,likert_5,NA
+V. TRAINING PROGRAM & PROG_0005,pq_advise,Advising and Guidance,Training Program & Program Quality,Exit Survey,TRUE,TRUE,likert_5,NA
+V. TRAINING PROGRAM & PROG_0006,pq_comps,Prep for comprehensive exams and candidacy,Training Program & Program Quality,Exit Survey,FALSE,TRUE,likert_5,NA
+V. TRAINING PROGRAM & PROG_0007,pq_collab,Collaborate across disciplines,Training Program & Program Quality,Exit Survey,TRUE,TRUE,likert_5,NA
+V. TRAINING PROGRAM & PROG_0008,pq_employ,Faculty support finding postgrad employment,Training Program & Program Quality,Exit Survey,TRUE,TRUE,likert_5,NA
+V. TRAINING PROGRAM & PROG_0009,pq_overall,Overall Quality,Training Program & Program Quality,Exit Survey,TRUE,TRUE,likert_5,NA
+VI. CLIMATE OF PROGRAM &OBSTACL,c_respect,Students are respected by faculty,Program Climate,Exit Survey,TRUE,TRUE,likert_5,NA
+VI. CLIMATE OF PROGRAM &OB_0001,c_intelpos,Intellectual climate is positive,Program Climate,Exit Survey,TRUE,TRUE,likert_5,NA
+VI. CLIMATE OF PROGRAM &OB_0002,c_socpos,Social climate is positive,Program Climate,Exit Survey,FALSE,TRUE,likert_5,NA
+VI. CLIMATE OF PROGRAM &OB_0003,c_studentcol,Students in program are collegial,Program Climate,Exit Survey,FALSE,TRUE,likert_5,NA
+VI. CLIMATE OF PROGRAM &OB_0004,c_staffhelp,Staff are helpful,Program Climate,Exit Survey,TRUE,TRUE,likert_5,NA
+VI. CLIMATE OF PROGRAM &OB_0005,c_tensions,Faculty tensions affect students,Program Climate,Exit Survey,TRUE,TRUE,likert_5,NA
+VI. CLIMATE OF PROGRAM &OB_0006,c_finfair,Financial support is fair,Program Climate,Exit Survey,FALSE,TRUE,likert_5,NA
+VI. CLIMATE OF PROGRAM &OB_0007,c_advisad,Advisor is an advocate,Program Climate,Exit Survey,FALSE,TRUE,likert_5,NA
+VI. CLIMATE OF PROGRAM &OB_0008,c_mcareer,Faculty support multiple careers,Program Climate,Exit Survey,TRUE,TRUE,likert_5,NA
+Rate the extent to which the fol,o_fin,Financial Commitments,Obstacles,Exit Survey,TRUE,TRUE,likert_3,NA
+Rate the extent to which th_0001,o_fam,Family Commitments,Obstacles,Exit Survey,TRUE,TRUE,likert_3,NA
+Rate the extent to which th_0002,o_facavail,Faculty Availability,Obstacles,Exit Survey,FALSE,TRUE,likert_3,NA
+Rate the extent to which th_0003,o_req,Program requirements or structure,Obstacles,Exit Survey,TRUE,TRUE,likert_3,NA
+Rate the extent to which th_0004,o_sched,Course Scheduling,Obstacles,Exit Survey,FALSE,TRUE,likert_3,NA
+Rate the extent to which th_0005,o_immig,Immigration Laws,Obstacles,Exit Survey,TRUE,TRUE,likert_3,NA
+Rate the extent to which th_0006,o_other,Other Obstacles,Obstacles,Exit Survey,FALSE,TRUE,likert_3,NA
+"If other factors, please specify",o_other_fr,Other obstacle explanation,Obstacles,Exit Survey,FALSE,FALSE,likert_3,Oof--written responses are a nightmare
+VII. CERTIFICATEPROGRAMS OFFERE,cp_yn,Pursued certificate program?,Certificate Programs,Exit Survey,TRUE,TRUE,yes_no,NA
+Please indicate the Graduate Sch,cp_t,Type of certificate program,Certificate Programs,Exit Survey,FALSE,FALSE,chart_32,"lots of categories in legend, looks crowded"
+Please rate the following aspect,cp_fac,Faculty or program leadership,Certificate Programs,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate the following a_0001,cp_intel,Intellectual Climate,Certificate Programs,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate the following a_0002,cp_social,Social Climate,Certificate Programs,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate the following a_0003,cp_overall,Overall Quality,Certificate Programs,Exit Survey,TRUE,TRUE,likert_5,NA
+VIII.QUALIFYING EXAMINATION & D,qe_course,Coursework prepared me for candidacy exams,Qualifying Exam & Dissertation,Exit Survey,TRUE,TRUE,likert_5,NA
+VIII.QUALIFYING EXAMINATIO_0001,qe_select,Selection of dissertation committee,Qualifying Exam & Dissertation,Exit Survey,FALSE,TRUE,likert_5,NA
+VIII.QUALIFYING EXAMINATIO_0002,qe_feedback,Received regular feedback,Qualifying Exam & Dissertation,Exit Survey,TRUE,TRUE,likert_5,NA
+VIII.QUALIFYING EXAMINATIO_0003,qe_avail,Committee members available to meet as needed,Qualifying Exam & Dissertation,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING & ADVIS,m_help_written,Advice helpfulness: Preparing for written exams,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0001,m_help_oral,Advice helpfulness: Preparing for oral exams,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0002,m_help_topic,Advice helpfulness: selecting dissertation topic,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0003,m_help_proposal,Advice helpfulness: Writing dissertation proposal,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0004,m_help_research,Advice helpfulness: Doing research for dissertation,Mentoring & Advising: Dissertation Advisor,Exit Survey,TRUE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0005,m_help_writing,Advice helpfulness: Writing and revising dissertation,Mentoring & Advising: Dissertation Advisor,Exit Survey,TRUE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0006,m_help_careeracad,Advice helpfulness: Identifying academic career options,Mentoring & Advising: Dissertation Advisor,Exit Survey,TRUE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0007,m_help_careernonacad,Advice helpfulness: Identifying nonacademic career options,Mentoring & Advising: Dissertation Advisor,Exit Survey,TRUE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0008,m_help_employ,Advice helpfulness: Searching for employment/training,Mentoring & Advising: Dissertation Advisor,Exit Survey,TRUE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0009,m_time_written,Advice timeliness: Preparing for written exams,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0010,m_time_oral,Advice timeliness: Preparing for oral exams,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0011,m_time_topic,Advice timeliness: Selecting dissertation topic,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0012,m_time_proposal,Advice timeliness: Writing dissertation proposal,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0013,m_time_research,Advice timeliness: Doing research for dissertation,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0014,m_time_writing,Advice timeliness: Writing and revising dissertation,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0015,m_time_careeracad,Advice timeliness: Identifying academic career options,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0016,m_time_careernonacad,Advice timeliness: Identifying nonacademic career options,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+IX.¬†¬†¬† FACULTY MENTORING &_0017,m_time_employ,Advice timeliness: Searching for employment/training,Mentoring & Advising: Dissertation Advisor,Exit Survey,FALSE,TRUE,likert_5,NA
+Was there another facultymember,me_oth_yn,Was there another faculty member who mentored you,Mentoring & Advising: Faculty Mentor,Exit Survey,TRUE,TRUE,yes_no,NA
+Was the faculty mentor in your d,me_oth_dep,Was this faculty member in your department,Mentoring & Advising: Faculty Mentor,Exit Survey,TRUE,TRUE,yes_no,NA
+Please rate how HELPFUL and TIME,me_oth_help_written,Advice helpfulness: Preparing for written exams,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0001,me_oth_help_oral,Advice helpfulness: Preparing for oral exams,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0002,me_oth_help_topic,Advice helpfulness: selecting dissertation topic,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0003,me_oth_help_proposal,Advice helpfulness: Writing dissertation proposal,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0004,me_oth_help_research,Advice helpfulness: Doing research for dissertation,Mentoring & Advising: Faculty Mentor,Exit Survey,TRUE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0005,me_oth_help_writing,Advice helpfulness: Writing and revising dissertation,Mentoring & Advising: Faculty Mentor,Exit Survey,TRUE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0006,me_oth_help_careeracad,Advice helpfulness: Identifying academic career options,Mentoring & Advising: Faculty Mentor,Exit Survey,TRUE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0007,me_oth_help_careernonacad,Advice helpfulness: Identifying nonacademic career options,Mentoring & Advising: Faculty Mentor,Exit Survey,TRUE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0008,me_oth_help_employ,Advice helpfulness: Searching for employment/training,Mentoring & Advising: Faculty Mentor,Exit Survey,TRUE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0009,me_oth_time_written,Advice timeliness: Preparing for written exams,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0010,me_oth_time_oral,Advice timeliness: Preparing for oral exams,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0011,me_oth_time_topic,Advice timeliness: Selecting dissertation topic,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0012,me_oth_time_proposal,Advice timeliness: Writing dissertation proposal,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0013,me_oth_time_research,Advice timeliness: Doing research for dissertation,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0014,me_oth_time_writing,Advice timeliness: Writing and revising dissertation,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0015,me_oth_time_careeracad,Advice timeliness: Identifying academic career options,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0016,me_oth_time_careernonacad,Advice timeliness: Identifying nonacademic career options,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how HELPFUL and_0017,me_oth_time_employ,Advice timeliness: Searching for employment/training,Mentoring & Advising: Faculty Mentor,Exit Survey,FALSE,TRUE,likert_5,NA
+X. CAREER& PROFESSIONAL DEVELOP,d_ta_yn,Did you ever TA?,Career & Professional Development,Exit Survey,TRUE,TRUE,yes_no,NA
+For how many courses did you ser,d_ta_number,For how many courses did you TA?,Career & Professional Development,Exit Survey,TRUE,TRUE,scale_5,NA
+newly_created,d_ta_training_location,Where did you receive TA Training?,Career & Professional Development,Exit Survey,TRUE,TRUE,NA,hard coded in app.R
+How helpful was this experience,d_ta_training_helpful,How helpful was the TA experience?,Career & Professional Development,Exit Survey,TRUE,TRUE,likert_4,NA
+Didyou receive training in coll,d_colteach_training_yn,Did you receive college teaching training?,Career & Professional Development,Exit Survey,TRUE,TRUE,yes_no,NA
+How helpful was this training?,d_coltech_training_helpful,How helpful was college teaching training?,Career & Professional Development,Exit Survey,TRUE,TRUE,likert_4,NA
+newly_created,d_colteach_training_location,Where did you receive college teaching training?,Career & Professional Development,Exit Survey,FALSE,TRUE,NA,hard coded in app.R
+Didyou ever teach any college c,d_ta_solo_yn,Did you ever teach any classes independently?,Career & Professional Development,Exit Survey,FALSE,TRUE,yes_no,NA
+Please indicate how many college,d_ta_solo_number,How many courses?,Career & Professional Development,Exit Survey,FALSE,TRUE,scale_5,NA
+newly_created,d_ta_solo_location,Where did you teach your own courses?,Career & Professional Development,Exit Survey,TRUE,TRUE,NA,NA
+Wereyou a Research Assistant (R,d_ra_yn,Were you ever an RA?,Career & Professional Development,Exit Survey,TRUE,TRUE,yes_no,NA
+How helpful was this experi_0001,d_ra_helpful,How helpful was this experience?,Career & Professional Development,Exit Survey,TRUE,TRUE,likert_4,NA
+Please indicate whether you used,d_conf_yn,Did you use Graduate Schoolís annual Research & Professional Development Conference?,Career & Professional Development,Exit Survey,TRUE,TRUE,yes_no,NA
+Please indicate whether you_0001,d_careerevents_yn,Did you use Career Center events?,Career & Professional Development,Exit Survey,TRUE,TRUE,yes_no,NA
+Please indicate whether you_0002,d_careerstaff_yn,Did you use Career Center staff individual counseling?,Career & Professional Development,Exit Survey,TRUE,TRUE,yes_no,NA
+Please indicate whether you_0003,d_workshopdep_yn,Did you use teaching workshops in department?,Career & Professional Development,Exit Survey,TRUE,TRUE,yes_no,NA
+Please indicate whether you_0004,d_workshopgrad_yn,Did you use teaching workshops in overall grad school?,Career & Professional Development,Exit Survey,TRUE,TRUE,yes_no,NA
+Please indicate whether you_0005,d_coursesdep_yn,Did you take courses on teaching in department?,Career & Professional Development,Exit Survey,TRUE,TRUE,yes_no,NA
+Please indicate whether you_0006,d_coursesgrad_yn,Did you take courses on teaching in overall grad school?,Career & Professional Development,Exit Survey,TRUE,TRUE,yes_no,NA
+Please indicate whether you_0007,d_conf_sat,Satisfied with Graduate Schoolís annual Research & Professional Development Conference?,Career & Professional Development,Exit Survey,FALSE,TRUE,likert_4,"All satisfied legend elements are cut off around somewhat dissatisfied--also ""Very Satisfied"" should start at blue, not red"
+Please indicate whether you_0008,d_careerevents_sat,Satisfied with Career Center events?,Career & Professional Development,Exit Survey,TRUE,TRUE,likert_4,NA
+Please indicate whether you_0009,d_careerstaff_sat,Satisfied with Career Center staff individual counseling?,Career & Professional Development,Exit Survey,TRUE,TRUE,likert_4,NA
+Please indicate whether you_0010,d_workshopdep_sat,Satisfied with teaching workshops in department?,Career & Professional Development,Exit Survey,FALSE,TRUE,likert_4,NA
+Please indicate whether you_0011,d_workshopgrad_sat,Satisfied with teaching workshops in overall grad school?,Career & Professional Development,Exit Survey,FALSE,TRUE,likert_4,NA
+Please indicate whether you_0012,d_coursesdep_sat,Satisfied with courses on teaching in department?,Career & Professional Development,Exit Survey,FALSE,TRUE,likert_4,NA
+Please indicate whether you_0013,d_coursesgrad_sat,Satisfied with courses on teaching in overall grad school?,Career & Professional Development,Exit Survey,FALSE,TRUE,likert_4,NA
+IX.  PRESENTATIONS& PUBLICATION,pp_oncampus,How many on campus presentations given?,Presentations & Publications,Exit Survey,TRUE,TRUE,choice_10,Lots of categories but tolerable imo
+How many research orscholarly p,pp_offcampus,How many off campus presentations given?,Presentations & Publications,Exit Survey,TRUE,TRUE,choice_10,Lots of categories but tolerable imo
+If you made anypresentation(s),pp_funding,Did you receive funding for off campus presentations?,Presentations & Publications,Exit Survey,FALSE,TRUE,scale_3,NA
+newly_created,pp_fundsource,Where did you receive funding for off-campus presentations?,Presentations & Publications,Exit Survey,FALSE,TRUE,NA,hard coded in app.R
+Based on research conducted whil,pp_pubs,How many works have you published?,Presentations & Publications,Exit Survey,TRUE,TRUE,choice_10,NA
+How many others are currently un,pp_pending,How many works are pending to be published?,Presentations & Publications,Exit Survey,FALSE,TRUE,choice_10,Lots of categories but tolerable imo
+XII. FINANCIALSUPPORTDid yo,f_supp_yn,Did you receive financial support?,Financial Support,Exit Survey,FALSE,TRUE,yes_no,NA
+Were you guaranteed multi-year f,f_guarantee,Were you guaranteed multiyear financial support at admission?,Financial Support,Exit Survey,FALSE,TRUE,yes_no,NA
+How many years of financial supp,f_years,How many years of support?,Financial Support,Exit Survey,FALSE,TRUE,choice_5,NA
+newly_created,f_sources,Where did you receive financial support?,Financial Support,Exit Survey,FALSE,TRUE,NA,hard coded in app.R
+If other form of non-loan financ,f_sources_other,"Explain ""other""",Financial Support,Exit Survey,FALSE,FALSE,NA,Written response
+Were you satisfied with the amou,f_sat,Were you satisfied with your financial support?,Financial Support,Exit Survey,TRUE,TRUE,yes_no,NA
+If you were supported by any Res,f_ratime,"If you were RA, did it affect your timeline?",Financial Support,Exit Survey,TRUE,TRUE,likert_4,NA
+If you were supported by an_0001,f_tatime,"If you were TA, did it affect your timeline?",Financial Support,Exit Survey,TRUE,TRUE,likert_4,NA
+How much did you borrow related,f_borrowing,How much did you borrow?,Financial Support,Exit Survey,TRUE,TRUE,choice_10,NA
+XIII.Overall SatisfactionPl,os_acad_exper,Academic Experience,Overall Satisfaction,Exit Survey,TRUE,TRUE,likert_5,NA
+XIII.Overall Satisfaction_0001,os_stud_exper,Student Experience,Overall Satisfaction,Exit Survey,TRUE,TRUE,likert_5,NA
+XIII.Overall Satisfaction_0002,os_overall_exper,Overall Experience,Overall Satisfaction,Exit Survey,TRUE,TRUE,likert_5,NA
+Please rate how well the Ph.D. p,os_clear_research_ques,Formulate Clear and Relevant Research Question,Overall Satisfaction,Exit Survey,TRUE,TRUE,likert_5,NA
+Please rate how well the Ph_0001,os_apply_research_meth,Apply appropriate disciplinary research methods,Overall Satisfaction,Exit Survey,TRUE,TRUE,likert_5,NA
+Please rate how well the Ph_0002,os_analyze_data,Analyze data or textual resources critically,Overall Satisfaction,Exit Survey,TRUE,TRUE,likert_5,NA
+Please rate how well the Ph_0003,os_acad_pres,Prepare and Offer Academic Presentations,Overall Satisfaction,Exit Survey,FALSE,TRUE,likert_5,NA
+Please rate how well the Ph_0004,os_public_pres,Prepare and Offer Public Presentations,Overall Satisfaction,Exit Survey,FALSE,TRUE,likert_5,NA
+Please indicate whether your dep,os_train_grant_yn,Yes or No: Grant Proposal Training,Overall Satisfaction,Exit Survey,FALSE,TRUE,yes_no,NA
+Please indicate whether you_0014,os_job_interviews_yn,Yes or No: Job Interview Preparation,Overall Satisfaction,Exit Survey,FALSE,TRUE,yes_no,NA
+Please indicate whether you_0015,os_job_talk_yn,Yes or No: Job Talk Preparation,Overall Satisfaction,Exit Survey,FALSE,TRUE,yes_no,NA
+Please indicate whether you_0016,os_locate_acad_pos_yn,Yes or No: Training for Locating Academia Positions,Overall Satisfaction,Exit Survey,TRUE,TRUE,yes_no,NA
+Please indicate whether you_0017,os_locate_outside_acad_pos_yn,Yes or No: Training for Locating Positions Outside Academia,Overall Satisfaction,Exit Survey,TRUE,TRUE,yes_no,NA
+Please indicate whether you_0018,os_train_grant,Grant Proposal Training Satisfaction,Overall Satisfaction,Exit Survey,FALSE,TRUE,likert_4,NA
+Please indicate whether you_0019,os_job_interviews,Job Interview Preparation Satisfaction,Overall Satisfaction,Exit Survey,FALSE,TRUE,likert_4,NA
+Please indicate whether you_0020,os_job_talk,Job Talk Preparation Satisfaction,Overall Satisfaction,Exit Survey,FALSE,TRUE,likert_4,NA
+Please indicate whether you_0021,os_locate_acad_pos,Training for Locating Academia Positions Satisfaction,Overall Satisfaction,Exit Survey,FALSE,TRUE,likert_4,NA
+Please indicate whether you_0022,os_locate_outside_acad_pos,Training for Locating Positions Outside Academia Satisfaction Satisfaction,Overall Satisfaction,Exit Survey,FALSE,TRUE,likert_4,NA
+If you were to start your doctor,os_same_uni,Select Same University?,Overall Satisfaction,Exit Survey,FALSE,TRUE,likert_5,NA
+If you were to start your d_0001,os_same_field,Select Same Field of Study?,Overall Satisfaction,Exit Survey,TRUE,TRUE,likert_5,NA
+If you were to start your d_0002,os_same_diss_adv,Select Same Dissertation Advisor?,Overall Satisfaction,Exit Survey,TRUE,TRUE,likert_5,NA
+If you were to start your d_0003,os_recommend,Recommend Duke to Someone Else?,Overall Satisfaction,Exit Survey,TRUE,TRUE,likert_5,NA
+XIV. EMPLOYMENT STATUS OREXPECT,e_postgrad_plans,Postgrad Plan Status,Employment Status Or Expectations,Exit Survey,FALSE,TRUE,qualitative,legend is cut off
+"If other plan, please specify:",e_other_plan,Other Postgrad Plan Status,Employment Status Or Expectations,Exit Survey,FALSE,FALSE,NA,written response
+What best describes your profess,e_employment_descr,Employment Description,Employment Status Or Expectations,Exit Survey,FALSE,FALSE,NA,written response
+"If other position, please specif",e_other_descr,Other Employment Description,Employment Status Or Expectations,Exit Survey,FALSE,FALSE,NA,written response
+What one type of principal emplo,e_employer_type_educ,Employer Type: Education,Employment Status Or Expectations,Exit Survey,TRUE,TRUE,qualitative,legend is cut off
+What one type of principal_0001,e_employer_type_gov,Employer Type: Government,Employment Status Or Expectations,Exit Survey,TRUE,TRUE,qualitative,NA
+What one type of principal_0002,e_employer_type_priv,Employer Type: Private Sector,Employment Status Or Expectations,Exit Survey,TRUE,TRUE,qualitative,NA
+"If other employer, please specif",e_employer_type_other,Employer Type: Other,Employment Status Or Expectations,Exit Survey,FALSE,FALSE,NA,written response
+Where is this employer located?,e_employer_loc,Employer Location,Employment Status Or Expectations,Exit Survey,TRUE,TRUE,qualitative,NA
+XV. DEMOGRAPHIC INFORMATIONWhat,dem_gender,Gender,Demographic Information,Exit Survey,FALSE,FALSE,NA,NA
+What is your year of birth?,dem_year_birth,Year of Birth,Demographic Information,Exit Survey,FALSE,FALSE,NA,NA
+What is your present citizenship,dem_us_citizen,US Citizen Status,Demographic Information,Exit Survey,FALSE,FALSE,NA,NA
+What is your present citize_0001,dem_non_us_citizen,Non-US Citizen Status,Demographic Information,Exit Survey,FALSE,FALSE,NA,NA
+What is your present citize_0002,dem_non_us_citizen_country,Non-US Citizen Country of Origin,Demographic Information,Exit Survey,FALSE,FALSE,NA,NA
+Are you Hispanic or Latino?,dem_hisp_latino,Hispanic or Latino?,Demographic Information,Exit Survey,FALSE,FALSE,NA,NA
+To which racial or ethnic group,dem_racial_group,Racial and Ethnic Groups,Demographic Information,Exit Survey,FALSE,FALSE,NA,NA
+Do you have a spouse or domestic,dem_spouse,Spouse or Domestic Partner?,Demographic Information,Exit Survey,FALSE,FALSE,NA,NA
+Do you have dependents who live,dem_dependents,Dependents?,Demographic Information,Exit Survey,FALSE,FALSE,NA,NA
+How many dependents live with yo,dem_number_of_dependents,Number of Dependents,Demographic Information,Exit Survey,FALSE,FALSE,NA,NA
+XVI.  COMMENTS Whichaspects,co_pleasing,What were the most pleasing aspects?,Comments,Exit Survey,FALSE,FALSE,NA,NA
+Were there aspects of your docto,co_problematic,What were the most problematic aspects?,Comments,Exit Survey,FALSE,FALSE,NA,NA
+Was there anything about your do,co_slowprogress,Was there anything that slowed your progress?,Comments,Exit Survey,FALSE,FALSE,NA,NA
+What changes would you recommend,co_changes,What changes would you recommend to your program for the future?,Comments,Exit Survey,FALSE,FALSE,NA,NA
+Q75 - Topics,placeholder,placeholder,Placeholder,Exit Survey,FALSE,FALSE,NA,NA
+redcap_event_name,di_redcap_event_name,Which Redcap Survey?,Data Identification,Alumni Outcomes,FALSE,FALSE,start of alumni outcomes,NA
+redcap_repeat_instrument.x.x,di_redcap_repeat_instrument.x.x,Repeat Instrument,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+redcap_repeat_instance,di_redcap_repeat_instance,Repeat Instance,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+redcap_data_access_group,di_redcap_data_access_group,Data Access Group,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+redcap_survey_identifier,di_redcap_survey_identifier,Survey Identifier,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+datediff,di_datediff,Time between graduations and when survey was taken,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+acad_plan,b_acad_plan,Academic Plan,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+dipl_descr,b_dipl_descr,Diploma Description,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+generation,b_generation,Generation,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+graduation_program,b_graduation_program,Graduation Program,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+degree,b_degree,Degree,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+graduation_term,b_graduation_term,Graduation Term,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+grad_term,b_grad_term,Graduation Term (text format),Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+prog_status,b_prog_status,Program Status,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+degree_status,b_degree_status,Degree Status,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+grad_date,b_grad_date,Graduation Date,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+stand_grad_date,b_stand_grad_date,Standardized Graduation Date,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+acad_year.y,b_acad_year.y,Academic Year,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+program_notes_1,b_program_notes_1,Second Degree,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+program_notes_2,b_program_notes_2,Third Degree,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+program_notes_3,b_program_notes_3,Currently Pursuing Another Degree,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+gender,dem_gender_redcap,Gender (Redcap),Demographics,Alumni Outcomes,FALSE,FALSE,NA,NA
+ethnicity,dem_ethnicity_redcap,Ethnicity (Redcap),Demographics,Alumni Outcomes,FALSE,FALSE,NA,NA
+us_status,dem_us_status_redcap,US Citizen Status (Redcap),Demographics,Alumni Outcomes,FALSE,FALSE,NA,NA
+us_status_code,dem_us_status_code,US Citizen Status Code,Demographics,Alumni Outcomes,FALSE,FALSE,NA,NA
+coalition_flag,coalition_flag,Coalition Flag,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+evnt_dpts,b_evnt_dpts,Event for Departments,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+advisor,b_advisor,Advisor,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+dag,b_dag,Program Name,Basic Academic Information,Alumni Outcomes,FALSE,FALSE,NA,NA
+survey_trigger,l_survey_trigger,Survey Trigger,Survey Logic,Alumni Outcomes,FALSE,FALSE,NA,NA
+student_information_complete,l_student_information_complete,Student Information Complete?,Survey Logic,Alumni Outcomes,FALSE,FALSE,NA,NA
+redcap_repeat_instrument.y,di_redcap_repeat_instrument.y,Repeat Instrument,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+redcap_repeat_instrument.x,di_redcap_repeat_instrument.x,Repeat Instrument,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+redcap_repeat_instrument.y.y,di_redcap_repeat_instrument.y.y,Repeat Instrument,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+grad_school_experience_timestamp,grad_school_experience_timestamp,Grad School Experience Timestamp,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+dsgn_proj1,ca_dsgn_proj_yn,Did you design research projects?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+dsgn_proj2,ca_dsgn_proj2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,remove this NA
+locate_data1,ca_locate_data_yn,Did you locate and apply data?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+locate_data2,ca_locate_data2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+presenting_orally1,ca_presenting_orally_yn,Did you do oral presentations?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+presenting_orally2,ca_presenting_orally2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+supervising_people1,ca_supervising_people_yn,Did you supervise?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+supervising_people2,ca_supervising_people2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+managing_budgets1,ca_managing_budgets_yn,Did you practice managing budgets?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+managing_budgets2,ca_managing_budgets2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+critical_thinking1,ca_critical_thinking_yn,Did you practice critical thinking?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+critical_thinking2,ca_critical_thinking2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+working_collaboratively1,ca_working_collaboratively_yn,Did you practice working collaboratively?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+working_collaboratively2,ca_working_collaboratively2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+working_diverse1,ca_working_diverse_yn,Did you practice working in a diverse team?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+working_diverse2,ca_working_diverse2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+mentoring1,ca_mentoring_yn,Did you practice mentoring or advising students?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+mentoring2,ca_mentoring2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+teaching1,ca_teaching_yn,Did you practice teaching or training people?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+teaching2,ca_teaching2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+proposals1,ca_proposals_yn,Did you practice writing funding proposals?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+proposals2,ca_proposals2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+articles1,ca_articles_yn,Did you practice writing articles or books?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+articles2,ca_articles2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+building1,ca_building_yn,Did you practice building career awareness or planning?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+building2,ca_building2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+scholarship1,ca_scholarship_yn,Did you practice communicating scholarship with a broad audience?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+scholarship2,ca_scholarship2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+creativity1,ca_creativity_yn,Did you practice creativity or innovative thinking?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+creativity2,ca_creativity2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+planning1,ca_planning_yn,Did you practice planning and executing complex projects?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+planning2,ca_planning2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+vision1,ca_vision_yn,Did you practice setting a strategic vision and goals?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+vision2,ca_vision2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+time1,ca_time_yn,Did you practice time management?,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+time2,ca_time2,NA,Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,NA
+research_activ,ca_research_activ,"Beyond disciplinary coursework and research, what activities, if any, did you do to build these skills during graduateschool?",Career And Professional Development,Alumni Outcomes,FALSE,FALSE,NA,Remove
+prepared,ca_prepared,My graduate school experience at Duke prepared me for my current career,Career And Professional Development,Alumni Outcomes,TRUE,TRUE,NA,NA
+challenge,js_challenge,How satisfied are you with your current job's intellectual challenge?,Job Satisfaction,Alumni Outcomes,TRUE,TRUE,NA,NA
+growth,js_growth,How satisfied are you with your current job's career growth?,Job Satisfaction,Alumni Outcomes,TRUE,TRUE,NA,NA
+independence,js_independence,How satisfied are you with your current job's independence?,Job Satisfaction,Alumni Outcomes,TRUE,TRUE,NA,NA
+flexibility,js_flexibility,How satisfied are you with your current job's flexibilty?,Job Satisfaction,Alumni Outcomes,TRUE,TRUE,NA,NA
+responsibility,js_responsibility,How satisfied are you with your current job's level of responsibility?,Job Satisfaction,Alumni Outcomes,TRUE,TRUE,NA,NA
+contribution,js_contribution,How satisfied are you with your current job's contribution to field/society?,Job Satisfaction,Alumni Outcomes,TRUE,TRUE,NA,NA
+prestige,js_prestige,How satisfied are you with your current job or organization's prestige?,Job Satisfaction,Alumni Outcomes,TRUE,TRUE,NA,NA
+security,js_security,How satisfied are you with your current job's security?,Job Satisfaction,Alumni Outcomes,TRUE,TRUE,NA,NA
+salary,js_salary,How satisfied are you with your current job's salary?,Job Satisfaction,Alumni Outcomes,TRUE,TRUE,NA,NA
+balance,js_balance,How satisfied are you with your current job's work life balance?,Job Satisfaction,Alumni Outcomes,TRUE,TRUE,NA,NA
+location,js_location,How satisfied are you with your current job's geographic location?,Job Satisfaction,Alumni Outcomes,TRUE,TRUE,NA,NA
+recognition,js_recognition,How satisfied are you with your current job's recognition?,Job Satisfaction,Alumni Outcomes,TRUE,TRUE,NA,NA
+recruiting,pr_recruiting_yn,Would your current employer be interested in recruiting Duke doctoral and masters graduates?,Program Quality,Alumni Outcomes,TRUE,TRUE,NA,NA
+intellectual_caliber,pr_intellectual_caliber,Faculty Intellect,Program Quality,Alumni Outcomes,TRUE,TRUE,NA,"Why are all questions in this category true/false, they should be likert"
+keep_pace,pr_keep_pace,Program's ability to keep pace with field's recent developments,Program Quality,Alumni Outcomes,TRUE,TRUE,NA,NA
+quality_curric,pr_quality_curric,Curriculum,Program Quality,Alumni Outcomes,TRUE,TRUE,NA,NA
+quality_teaching,pr_quality_teaching,Faculty teaching,Program Quality,Alumni Outcomes,TRUE,TRUE,NA,NA
+research_methods,pr_research_methods,Research methods,Program Quality,Alumni Outcomes,TRUE,TRUE,NA,NA
+academic_advising,pr_academic_advising,Advising and guidance,Program Quality,Alumni Outcomes,TRUE,TRUE,NA,NA
+exam_prep,pr_exam_prep,Prep for comprehensive exams and candidacy,Program Quality,Alumni Outcomes,TRUE,TRUE,NA,NA
+collaboration,pr_ollaboration,Collaborate across disciplines,Program Quality,Alumni Outcomes,TRUE,TRUE,NA,NA
+find_employment,pr_find_employment,Faculty support finding employment,Program Quality,Alumni Outcomes,TRUE,TRUE,NA,NA
+overall,pr_overall,Overall Quality,Program Quality,Alumni Outcomes,TRUE,TRUE,NA,NA
+respect,cl_respect,Students respected by faculty,Program Climate,Alumni Outcomes,TRUE,TRUE,NA,NA
+intell_climate,cl_intell_climate,Intellectual climate is positive,Program Climate,Alumni Outcomes,TRUE,TRUE,NA,NA
+social_climate,cl_social_climate,Social climate is positive,Program Climate,Alumni Outcomes,TRUE,TRUE,NA,NA
+collegial,cl_collegial,students in  program are collegial,Program Climate,Alumni Outcomes,TRUE,TRUE,NA,NA
+helpful,cl_helpful,Staff are helpful,Program Climate,Alumni Outcomes,TRUE,TRUE,NA,NA
+tensions,cl_tensions,There are faculty tensions that affect students,Program Climate,Alumni Outcomes,TRUE,TRUE,NA,NA
+financial_support,cl_financial_support,Financial support is distributed fairly,Program Climate,Alumni Outcomes,TRUE,TRUE,NA,NA
+advocate,cl_advocate,My advisor served as an advocate when necessary,Program Climate,Alumni Outcomes,TRUE,TRUE,NA,NA
+mult_paths,cl_mult_paths,Faculty supported multiple career paths,Program Climate,Alumni Outcomes,TRUE,TRUE,NA,NA
+inclusion_prog,cl_inclusion_prog,Diversity and inclusion was important to students in my program,Program Climate,Alumni Outcomes,TRUE,TRUE,NA,NA
+inclusion_staff,cl_inclusion_staff,Diversity and inclusion was important to faculty and staff in my program,Program Climate,Alumni Outcomes,TRUE,TRUE,NA,NA
+commitments,ob_commitments_r,Financial Commitments,Obstacles,Alumni Outcomes,TRUE,TRUE,NA,NA
+fam_obligations,ob_fam_obligations_r,Family Commitments,Obstacles,Alumni Outcomes,TRUE,TRUE,NA,NA
+avail_faculty,ob_avail_faculty_r,Faculty Availability,Obstacles,Alumni Outcomes,TRUE,TRUE,NA,NA
+structure,ob_structure_r,Requirements or structure,Obstacles,Alumni Outcomes,TRUE,TRUE,NA,NA
+scheduling,ob_scheduling_r,Course Scheduling,Obstacles,Alumni Outcomes,TRUE,TRUE,NA,NA
+immig_laws,ob_immig_laws_r,Immigration Laws,Obstacles,Alumni Outcomes,TRUE,TRUE,NA,NA
+resar_opportunities,ob_resar_opportunities_r,Research opportunties of interest,Obstacles,Alumni Outcomes,TRUE,TRUE,NA,NA
+other_factors,ob_other_factors_r,Other Obstacle,Obstacles,Alumni Outcomes,TRUE,TRUE,NA,NA
+spef_oth_obstac,ob_spef_oth_obstac_r,Other obstacle explanation,Obstacles,Alumni Outcomes,TRUE,TRUE,NA,NA
+same_field_duke,r_same_field_duke,"If you were to do it all again, would you choose the same field of study at Duke?",Reflections,Alumni Outcomes,TRUE,TRUE,NA,NA
+diff_univ,r_diff_univ,"If you were to do it all again, would you choose the same field of study at another university?",Reflections,Alumni Outcomes,TRUE,TRUE,NA,NA
+diff_field,r_diff_field,"If you were to do it all again, would you choose a different field of study at Duke?",Reflections,Alumni Outcomes,TRUE,TRUE,NA,NA
+diff_field_univ,r_diff_field_univ,"If you were to do it all again, would you choose a different field of study at another university?",Reflections,Alumni Outcomes,TRUE,TRUE,NA,NA
+diff_postdoc,r_diff_postdoc,"If you were to do it all again, would you choose a different post-graduate degree?",Reflections,Alumni Outcomes,TRUE,TRUE,NA,NA
+not_pursue,r_not_pursue,"If you were to do it all again, would you choose to not pursue a graduate degree?",Reflections,Alumni Outcomes,TRUE,TRUE,NA,NA
+recommend_program,r_recommend_program_yn,"Based upon your experiences, would you recommend yourgraduate program at Duke to a prospective graduatestudent?",Reflections,Alumni Outcomes,TRUE,TRUE,NA,NA
+fac_discuss,ev_fac_discuss,How interested are you in attending faculty discussing research?,Alumni Event Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+stud_discuss,ev_stud_discuss,How interested are you in attending graduate students discussing research?,Alumni Event Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+admin_discuss,ev_admin_discuss,How interested are you in attending events with senior administrators to discuss Duke?,Alumni Event Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+networking,ev_networking,How interested are you in attending professional networking oppportunities?,Alumni Event Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+social_events,ev_social_events,How interested are you in attending social events?,Alumni Event Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+reunions,ev_reunions,How interested are you in attending department or program reunions?,Alumni Event Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+mentor_students,al_mentor_students,How interested are you in mentoring current Duke graduate students?,Alumni Activity Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+mentor_alumni,al_mentor_alumni,How interested are you in mentoring Duke alumni?,Alumni Activity Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+volunteer,al_volunteer,How interested are you in volunteering regionally with Duke alumni?,Alumni Activity Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+attend_events,al_attend_events,How interested are you in attending events in Durham?,Alumni Activity Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+speaker,al_speaker,How interested are you in speaking at professional development events?,Alumni Activity Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+attend_region,al_attend_region,How interested are you in attending alumni events in your region?,Alumni Activity Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+ambassador,al_ambassador,How interested are you in serving as a Duke ambassador?,Alumni Activity Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+engage_admin,al_engage_admin,How interested are you in engaging senior administrators?,Alumni Activity Interest,Alumni Outcomes,TRUE,TRUE,NA,NA
+pleasing_aspects,open_pleasing_aspects,Which aspects of your graduate program pleased you the most?,Comments,Alumni Outcomes,FALSE,FALSE,NA,NA
+problematic_aspects,open_problematic_aspects,Were there aspects of your graduate program that you found problematic?,Comments,Alumni Outcomes,FALSE,FALSE,NA,NA
+slowed_progress,open_slowed_progress,Was there anything about your graduate program that slowed your progress?,Comments,Alumni Outcomes,FALSE,FALSE,NA,NA
+future_recommendations,open_future_recommendations,What changes would you recommend in your program for the future?,Comments,Alumni Outcomes,FALSE,FALSE,NA,NA
+grad_school_experience_complete,grad_school_experience_complete,Grad School Experience Complete?,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+redcap_repeat_instrument,redcap_repeat_instrument,Redcap Repeat Instrument,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+position_information_timestamp,position_information_timestamp,Position Information Timestamp,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+position_form_date,position_form_date,Position form Date,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+employment_status,emp_employment_status,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+institution_name,emp_institution_name,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+other_institution,emp_other_institution,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+acad_inst_type,emp_acad_inst_type,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+current_employer,emp_current_employer,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+beyond_acad_dept,emp_beyond_acad_dept,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+further_training,emp_further_training,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+additional_degree,emp_additional_degree,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+oth_degree,emp_oth_degree,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+postdoc_position,emp_postdoc_position,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+oth_postdoc,emp_oth_postdoc,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+oth_training,emp_oth_training,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+acad_pos_type,emp_acad_pos_type,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+tenured_position,emp_tenured_position,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+oth_pos_tenured,emp_oth_pos_tenured,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+tenuretrack_position,emp_tenuretrack_position,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+oth_pos_tenure,emp_oth_pos_tenure,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+nontenure_position,emp_nontenure_position,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+oth_pos_nontenure,emp_oth_pos_nontenure,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+administration_position,emp_administration_position,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+oth_pos_admin,emp_oth_pos_admin,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+beyond_acad_pos,emp_beyond_acad_pos,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+position_details,emp_position_details,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+beyond_acad_sector,emp_beyond_acad_sector,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+oth_sector,emp_oth_sector,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+beyond_acad_indus,emp_beyond_acad_indus,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+oth_industry,emp_oth_industry,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+position_city,emp_position_city,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+position_state,emp_position_state,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+position_country,emp_position_country,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+start_date,emp_start_date,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+start_year,emp_start_year,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+completion_date,emp_completion_date,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+research_involved,emp_research_involved,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+relates_field,emp_relates_field,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+relates_degree,emp_relates_degree,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+salary_amount,emp_salary_amount,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+salary_range,emp_salary_range,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+source_link,emp_source_link,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+seeking_employment,emp_seeking_employment,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+explain_careertype,emp_explain_careertype,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+not_seeking,emp_not_seeking,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+coalition_sector,emp_coalition_sector,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+coalition_careertyp,emp_coalition_careertyp,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+coalition_postype,emp_coalition_postype,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+position_type,emp_position_type,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+dept_notes,emp_dept_notes,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+data_point,emp_data_point,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+source_survey,emp_source_survey,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+tgs_notes,emp_tgs_notes,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+employer_or_institution,emp_employer_or_institution,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+position_merged,emp_position_merged,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+new_category,emp_new_category,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+sub_category,emp_sub_category,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+sub_sub_category,emp_sub_sub_category,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+industry_agg,emp_industry_agg,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+industry_cat,emp_industry_cat,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+industry_sub_cat,emp_industry_sub_cat,NA,Employment,Alumni Outcomes,FALSE,FALSE,NA,NA
+source_flag,source_flag,Source Flag,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+source_date,source_date,Source Date,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+sequence,sequence,Sequence,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+timestamp,timestamp,Timestamp,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+coalition_details,coalition_details,Coalition Details,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+coalition_notes,coalition_notes,Coalition Notes,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+coalition_url,coalition_url,Coalition URL,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+grad_date_piped,grad_date_piped,Grad Data Piped,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+to_be_sorted,to_be_sorted,To be sorted,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA
+position_information_complete,position_information_complete,Position information complete,Data Identification,Alumni Outcomes,FALSE,FALSE,NA,NA

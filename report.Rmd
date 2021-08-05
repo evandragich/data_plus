@@ -1,0 +1,96 @@
+---
+title: "Duke Graduate Education Report"
+subtitle: "`r myprogram`"
+author: "Evan Dragich & Katie Tan"
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
+output:
+  pdf_document:
+    extra_dependencies: ["float"]
+params:
+  program: ""
+header-includes:
+    - \usepackage{booktabs}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+library(tidyverse)
+library(ggplot2)
+library(table1)
+library(kableExtra)
+theme_set(theme_minimal())
+
+```
+
+# Overview
+This report contains two pages of content, following this title page. The first displays demographic data collected from *Exit Survey for PhD Completers*, a standardized questionnaire administered to graduating doctoral students at many American Association of Universities (AAU) institutions. The responses displayed in this report were collected from students graduating from the **`r myprogram`** department between the Spring 2012 and Fall 2020 semesters. For more details on the survey's content, distribution, and response rate, please reach out to the Assistant Dean of Evaluation and Assessment in TGS, Dr. Firstname Lastname.
+
+The third page displays a series of horizontal boxplots:
+
+* Each row represents a single question. 
+* Each dot in the row represents the mean response for all respondents from a particular program.
+  + Only programs in **`r mygeneration`** are displayed here—`r length(comparison_group)` total.
+* The width of the box represents the Interquartile Range (IQR), with its left- and right-hand boundaries representing the 25th and 75th percentile of scores, respectively.
+* The mean response for **`r mygeneration`** is colored:
+  + Green if this mean is greater than one Standard Deviation (SD) than the overall **`r mygeneration`** mean
+  + Red if this mean is greater than one SD below average
+  + Blue if it is within one SD of the **`r mygeneration`** mean on either side.
+* The questions are sorted by this relative ranking
+  + Questions for which **`r mygeneration`'s** relative rating is highest are at the top.
+
+Given the broad scope of this survey, and thus the variety of question formats, some qualitative responses were converted to numbers for this display. For example, *How many on campus presentations given?* was not converted, as responses were already numeric. However, in the case of *Overall Quality*, the question was originally framed Likert-style: respondents indicated one of the following: *Poor*, *Fair*, *Good*, *Very Good*, and *Excellent*; these scores were translated into numeric values from 1-5, respectively.
+
+As a result, the numbers on the bottom axis are not as meaningful. For example, a score of "4" may be on the low end for one question, but higher for another. The key takeaways from this display are the **colors** of **`r mygeneration`'s** responses, as these ratings take into account those of all **`r mygeneration`** programs.
+\clearpage
+
+```{r create summary stats table}
+labels <- list(
+    variables=list(dem_gender="Gender",
+                   dem_racial_group_cleaned="Race/Ethnicity",
+                   dem_citizen_cleaned="Citizenship Status",
+                   b_age_at_enroll_binned="Age at Enrollment",
+                   b_grad_term_binned = "Graduation Term"),
+    groups=list("", "", "",""))
+
+mysummary_df <- mysummary_df[,c(2:6)]
+
+strata <- c(list(Total=mysummary_df))
+
+my.render.cat <- function(x) {
+    c("", sapply(stats.default(x), function(y) with(y,
+        sprintf("%d (%.0f %%)", FREQ, PCT))))
+}
+```
+# Summary Statistics for `r myprogram`
+``` {r print summary stats table}
+table1(strata, 
+       labels,
+       render.categorical = my.render.cat) %>%
+      t1kable() %>%
+  kable_styling(., latex_options = "hold_position", position = "center")
+
+```
+
+```{r create g (summary boxplots)}
+g <- ggplot(mydata, aes(x = str_wrap_factor(question, width = 58), y = score)) +
+  geom_boxplot(outlier.alpha = 0.2) +
+  geom_dotplot(binaxis='y', binwidth = .1, method = "histodot", stackdir='center', aes(alpha = highlight,fill = extreme)) +
+  labs(x = "",
+       y = "Program Mean Rating") + 
+  scale_alpha_discrete(range = c(0.2, 1),
+                       guide = "none") +
+  scale_fill_manual(breaks = c("Below Average", "Near Average", "Above Average"),
+                    values = c("tomato3", "blue", "green", "black"),
+                    name = str_wrap(paste0(myprogram, "'s Relative Rating"), width = 30),
+                    guide = guide_legend(nrow = 3, reverse = TRUE)) +
+  coord_flip() +
+  theme(legend.position = "bottom")
+```
+# Summary of `r myprogram`
+## Relative to other `r mygeneration` programs
+### Each dot represents one `r mygeneration` program mean.
+``` {r print g, fig.width = 8, fig.height = 9.5, fig.align = "center"}
+print(g)
+```
